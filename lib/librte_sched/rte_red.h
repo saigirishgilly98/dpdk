@@ -425,6 +425,17 @@ rte_red_enqueue_nonempty(const struct rte_red_config *red_cfg,
 		red->count = 0;
 		return 2;
 	}
+	
+	/* max_th <= avg < 2 * max_th: mark the packet with pa probability */
+	if(red->avg < 2 * red_cfg->max_th)
+		if(!__rte_gred_drop(red_cfg, red)) {
+			red->count ++;
+			return 0;
+		}
+		
+		red->count = 0;
+		return 2;
+	}
 
 	/* max_th <= avg: always mark the packet */
 	red->count = 0;
