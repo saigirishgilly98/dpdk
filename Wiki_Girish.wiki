@@ -5,7 +5,7 @@ The DPDK framework creates a set of libraries for specific hardware/software env
 The EAL hides the environment specifics and provides a standard programming interface to libraries, available hardware accelerators and other hardware and operating system (Linux, FreeBSD) elements.
 Once the EAL is created for a specific environment, developers link to the library to create their applications.
 
-Active queue management - In routers and switches, active queue management (AQM) is the policy of dropping packets inside a buffer associated with a network interface controller (NIC) before that buffer becomes full,
+Active queue management (AQM) - In routers and switches, active queue management (AQM) is the policy of dropping packets inside a buffer associated with a network interface controller (NIC) before that buffer becomes full,
 often with the goal of reducing network congestion or improving end-to-end latency. This task is performed by the network scheduler, which for this purpose uses various algorithms such as random early detection (RED),
 Explicit Congestion Notification (ECN), or controlled delay (CoDel). Active queue disciplines drop or mark packets before the queue is full. Typically, they operate by maintaining one or more drop/mark probabilities,
 and probabilistically dropping or marking packets even when the queue is short.
@@ -22,3 +22,22 @@ GRED - GRED(Gentle Random Early Detection) was proposed as an AQM method that co
 GRED was proposed as a variant of RED, in which GRED enhances the way of tuning some of RED’s parameters such as maxthreshold and Dmax(the maximum value of the initial packet dropping probability).
 Moreover, GRED maintains the aql(average queue length) value at a level on a router buffer which is between the minthreshold and maxthreshold positions,this level is named Taql(Target level for the aql).
 Maintaining aql value at Taql level avoids increasing the router buffer size to be above the maxthreshold position, and therefore smaller number of packets is dropped.
+
+Week 1 - Read about Active Queue Management (AQM), Random Early Detection (RED), Gentle Random Early Detection (GRED).
+         AQM - https://en.wikipedia.org/wiki/Active_queue_management 
+         RED - http://www.mathcs.emory.edu/~cheung/Courses/558/Syllabus/Papers/RED.pdf (Random Early Detection Gateways for                  Congestion Avoidance - Sally Floyd and Van Jacobson)
+         GRED - https://pdfs.semanticscholar.org/8bbe/bb4c3b8b2316cf48c2e95fe5c15e176a56df.pdf (Performance Investigations of                 Some Active Queue Management Techniques Using Simulation)
+
+Week 2 - Read about Data Plane Development Kit (DPDK). Downloaded and Installed DPDK. 
+         Getting Started Guide for Linux - http://doc.dpdk.org/guides/linux_gsg/
+         
+Week 3 - Run Hello World and l2fwd application in DPDK. Located RED library in dpdk.
+         HELLO WORLD APPLICATION - https://doc.dpdk.org/guides/sample_app_ug/hello_world.html
+         L2FWD APPLICATION - https://doc.dpdk.org/guides/sample_app_ug/l2_forward_real_virtual.html
+         RED IN DPDK - https://doc.dpdk.org/api/rte__red_8h.html
+
+Week 4 - Tried running QoS Scheduler Sample Application. Got Error. Found out it is due to non availability of cores in                system.
+         https://doc.dpdk.org/guides/sample_app_ug/qos_scheduler.html
+
+Week 5 - Converted RED to GRED by modifying code at lib/librte_sched/rte_red.c and lib/librte_sched/rte_red.h
+
