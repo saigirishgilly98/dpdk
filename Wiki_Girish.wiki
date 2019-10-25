@@ -29,6 +29,7 @@ Week 1 - Read about Active Queue Management (AQM), Random Early Detection (RED),
          GRED - https://pdfs.semanticscholar.org/8bbe/bb4c3b8b2316cf48c2e95fe5c15e176a56df.pdf (Performance Investigations of Some Active Queue Management Techniques Using Simulation)
 
 Week 2 - Read about Data Plane Development Kit (DPDK). Downloaded and Installed DPDK. 
+         
          Getting Started Guide for Linux - http://doc.dpdk.org/guides/linux_gsg/
          
 Week 3 - Run Hello World and l2fwd application in DPDK. Located RED library in dpdk.
