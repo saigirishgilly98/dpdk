@@ -30,6 +30,7 @@ Week 1 - Read about Active Queue Management (AQM), Random Early Detection (RED),
 
 Week 2 - Read about Data Plane Development Kit (DPDK). Downloaded and Installed DPDK. 
          
+         DPDK - https://www.linkedin.com/pulse/dpdk-layman-aayush-shrut/
          Getting Started Guide for Linux - http://doc.dpdk.org/guides/linux_gsg/
          
 Week 3 - Run Hello World and l2fwd application in DPDK. Located RED library in dpdk.
