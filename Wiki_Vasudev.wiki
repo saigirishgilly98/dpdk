@@ -8,19 +8,23 @@ RED - Random early detection (RED), also known as random early discard or random
 GRED - GRED(Gentle Random Early Detection) was proposed as an AQM method that controls congestion at router buffers preliminary. GRED aims to solve some of RED’s problems. GRED was proposed as a variant of RED, in which GRED enhances the way of tuning some of RED’s parameters such as maxthreshold and Dmax(the maximum value of the initial packet dropping probability). Moreover, GRED maintains the aql(average queue length) value at a level on a router buffer which is between the minthreshold and maxthreshold positions,this level is named Taql(Target level for the aql). Maintaining aql value at Taql level avoids increasing the router buffer size to be above the maxthreshold position, and therefore smaller number of packets is dropped.
 
 Week 1- Read the theory aspect behind the project: Random Early Detection (RED), Gentle Random Early Detection (GRED).
+
         RED:- https://sites.google.com/a/ncsu.edu/tail-drop-vs-red/plan-of-work/red-algorithm 
         GRED:- https://pdfs.semanticscholar.org/8bbe/bb4c3b8b2316cf48c2e95fe5c15e176a56df.pdf (Performance Investigations of Some Active Queue Management Techniques Using Simulation)        
  
 Week 2- Read about DPDK and it's applications. Also went through Active Queue Management and difference between this and             Passive Queue Management.
+
         Difference between AQM and PQM:- https://pdfs.semanticscholar.org/dee0/fdae49ec31e318606c327fcd88fe600e02c8.pdf
         AQM:- https://en.wikipedia.org/wiki/Active_queue_management 
               https://ieeexplore.ieee.org/abstract/document/1024256
         
 Week 3- Installed DPDK(faced issues in configuring it properly and locating the setup.sh file). Ran l2fwd application.
+
         DPDK installation:- https://software.intel.com/en-us/videos/data-plane-development-dpdk-installation-guide
         l2fwd:- https://youtu.be/epdRtMPtuFY
         
 Week 4- Tried running QoS Scheduler Sample Application. Got Error. Found out it is due to non availability of cores in               system.
+
         https://doc.dpdk.org/guides/sample_app_ug/qos_scheduler.html
    
 Week 5- Converted RED to GRED by modifying code at lib/librte_sched/rte_red.c and lib/librte_sched/rte_red.h
