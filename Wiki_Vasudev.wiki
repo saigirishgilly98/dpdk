@@ -25,6 +25,8 @@ Week 1- Read the theory aspect behind the project: Random Early Detection (RED),
 Week 2- Read about DPDK and it's applications. Also went through Active Queue Management and difference between this and             Passive Queue Management.
 
 
+
+
         Difference between AQM and PQM:- https://pdfs.semanticscholar.org/dee0/fdae49ec31e318606c327fcd88fe600e02c8.p        
         
         AQM:- https://en.wikipedia.org/wiki/Active_queue_management 
