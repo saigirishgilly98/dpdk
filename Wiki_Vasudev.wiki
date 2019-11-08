@@ -1,4 +1,5 @@
 GRED**
+
 DPDK - The Data Plane Development Kit (DPDK) is a set of data plane libraries and network interface controller drivers for fast packet processing. The DPDK framework creates a set of libraries for specific hardware/software environments through the creation of an Environment Abstraction Layer (EAL). The EAL hides the environment specifics and provides a standard programming interface to libraries, available hardware accelerators and other hardware and operating system (Linux, FreeBSD) elements. Once the EAL is created for a specific environment, developers link to the library to create their applications.
 Active queue management (AQM) - In routers and switches, active queue management (AQM) is the policy of dropping packets inside a buffer associated with a network interface controller (NIC) before that buffer becomes full, often with the goal of reducing network congestion or improving end-to-end latency. This task is performed by the network scheduler, which for this purpose uses various algorithms such as random early detection (RED), Explicit Congestion Notification (ECN), or controlled delay (CoDel). Active queue disciplines drop or mark packets before the queue is full. Typically, they operate by maintaining one or more drop/mark probabilities, and probabilistically dropping or marking packets even when the queue is short.
 
@@ -6,32 +7,22 @@ RED - Random early detection (RED), also known as random early discard or random
 
 GRED - GRED(Gentle Random Early Detection) was proposed as an AQM method that controls congestion at router buffers preliminary. GRED aims to solve some of RED’s problems. GRED was proposed as a variant of RED, in which GRED enhances the way of tuning some of RED’s parameters such as maxthreshold and Dmax(the maximum value of the initial packet dropping probability). Moreover, GRED maintains the aql(average queue length) value at a level on a router buffer which is between the minthreshold and maxthreshold positions,this level is named Taql(Target level for the aql). Maintaining aql value at Taql level avoids increasing the router buffer size to be above the maxthreshold position, and therefore smaller number of packets is dropped.
 
-
-
-Week 1 - Read the theory aspect behind the project: Random Early Detection (RED), Gentle Random Early Detection (GRED).
-
+Week 1- Read the theory aspect behind the project: Random Early Detection (RED), Gentle Random Early Detection (GRED).
         RED:- https://sites.google.com/a/ncsu.edu/tail-drop-vs-red/plan-of-work/red-algorithm 
-        GRED:-    https://pdfs.semanticscholar.org/8bbe/bb4c3b8b2316cf48c2e95fe5c15e176a56df.pdf (Performance Investigations of Some Active Queue Management Techniques Using Simulation)
+        GRED:- https://pdfs.semanticscholar.org/8bbe/bb4c3b8b2316cf48c2e95fe5c15e176a56df.pdf (Performance Investigations of Some Active Queue Management Techniques Using Simulation)        
+ 
+Week 2- Read about DPDK and it's applications. Also went through Active Queue Management and difference between this and             Passive Queue Management.
+        Difference between AQM and PQM:- https://pdfs.semanticscholar.org/dee0/fdae49ec31e318606c327fcd88fe600e02c8.pdf
+        AQM:- https://en.wikipedia.org/wiki/Active_queue_management 
+              https://ieeexplore.ieee.org/abstract/document/1024256
         
-
-Week 2 - Read about DPDK and it's applications. Also went through Active Queue Management and difference between this and Passive Queue Management.
-
-
-        AQM:- https://en.wikipedia.org/wiki/Active_queue_management https://ieeexplore.ieee.org/abstract/document/1024256/           Difference between AQM and PQM:- https://www.google.com/url?sa=t&source=web&rct=j&url=https://pdfs.semanticscholar.org/dee0/fdae49ec31e318606c327fcd88fe600e02c8.pdf&ved=2ahUKEwiXrLyVlcHlAhUVX30KHZM3BVwQFjAEegQIBhAB&usg=AOvVaw0CYdJSy-Io3ETmK0ivmV9H&cshid=1572343858675
-
-
-Week 3 - Installed DPDK(faced issues in configuring it properly and locating the setup.sh file). Ran l2fwd application.
-
-
-        DPDK installation:- https://software.intel.com/en-us/videos/data-plane-development-dpdk-installation-guide 
-        l2fwd:-https://youtu.be/epdRtMPtuFY
+Week 3- Installed DPDK(faced issues in configuring it properly and locating the setup.sh file). Ran l2fwd application.
+        DPDK installation:- https://software.intel.com/en-us/videos/data-plane-development-dpdk-installation-guide
+        l2fwd:- https://youtu.be/epdRtMPtuFY
         
-
-Week 4 - Tried running QoS Scheduler Sample Application. Got Error. Found out it is due to non availability of cores in system.
-
+Week 4- Tried running QoS Scheduler Sample Application. Got Error. Found out it is due to non availability of cores in               system.
         https://doc.dpdk.org/guides/sample_app_ug/qos_scheduler.html
+   
+Week 5- Converted RED to GRED by modifying code at lib/librte_sched/rte_red.c and lib/librte_sched/rte_red.h
 
-
-Week 5 - Converted RED to GRED by modifying code at lib/librte_sched/rte_red.c and lib/librte_sched/rte_red.h
-
-Week 6 - Cross checked the GRED code present in ns3 and the one we added in dpdk for the formula and implementation
+Week 6- Cross checked the GRED code present in ns3 and the one we added in dpdk for the formula and implementation
