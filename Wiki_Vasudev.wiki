@@ -27,10 +27,11 @@ Week 2- Read about DPDK and it's applications. Also went through Active Queue Ma
 
 
 
-        Difference between AQM and PQM:- https://pdfs.semanticscholar.org/dee0/fdae49ec31e318606c327fcd88fe600e02c8.p        
+                
         
         AQM:- https://en.wikipedia.org/wiki/Active_queue_management 
               https://ieeexplore.ieee.org/abstract/document/1024256
+        Difference between AQM and PQM:- https://pdfs.semanticscholar.org/dee0/fdae49ec31e318606c327fcd88fe600e02c8.p
         
         
 Week 3- Installed DPDK(faced issues in configuring it properly and locating the setup.sh file). Ran l2fwd application.
